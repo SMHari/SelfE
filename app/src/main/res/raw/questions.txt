@@ -1,0 +1,509 @@
+{
+    "1": {
+      "question": "Which operator performs pattern matching?",
+      "answer": "1",
+      "type": "mcq",
+      "options": [
+        {
+          "opt": "BETWEEN operator"
+        },
+        {
+          "opt": "LIKE operator"
+        },
+        {
+          "opt": "EXISTS operator"
+        },
+        {
+          "opt": "None of these"
+        }
+      ],
+      "hour": 0,
+      "minute": 10
+    },
+    "2": {
+      "question": "What operator tests column for the absence of data?",
+      "answer": "2",
+      "type": "mcq",
+      "options": [
+        {
+          "opt": "EXISTS operator"
+        },
+        {
+          "opt": "NOT operator"
+        },
+        {
+          "opt": "IS NULL operator"
+        },
+        {
+          "opt": "None of these"
+        }
+      ],
+      "hour": 0,
+      "minute": 10
+    },
+    "3": {
+      "question": "In SQL, which command(s) is(are) used to change a table&#39;s storage characteristics?",
+      "answer": "0",
+      "type": "mcq",
+      "options": [
+        {
+          "opt": "ALTER TABLE"
+        },
+        {
+          "opt": "MODIFY TABLE"
+        },
+        {
+          "opt": "CHANGE TABLE"
+        },
+        {
+          "opt": "All of the above"
+        }
+      ],
+      "hour": 0,
+      "minute": 10
+    },
+    "4": {
+      "question": "In SQL, which command is used to SELECT only one copy of each set of duplicable rows",
+      "answer": "0",
+      "type": "mcq",
+      "options": [
+        {
+          "opt": "SELECT DISTINCT"
+        },
+        {
+          "opt": "SELECT UNIQUE"
+        },
+        {
+          "opt": "SELECT DIFFERENT"
+        },
+        {
+          "opt": "All of the above"
+        }
+      ],
+      "hour": 0,
+      "minute": 10
+    },
+    "5": {
+      "question": "Which of the SQL statements is correct?",
+      "answer": "1",
+      "type": "mcq",
+      "options": [
+        {
+          "opt": "SELECT Username AND Password FROM Users"
+        },
+        {
+          "opt": "SELECT Username, Password FROM Users"
+        },
+        {
+          "opt": "SELECT Username, Password WHERE Username = &#39;user1&#39;"
+        },
+        {
+          "opt": "None of these"
+        }
+      ],
+      "hour": 0,
+      "minute": 10
+    },
+    "6": {
+      "question": "Which SQL keyword is used to retrieve a maximum value?",
+      "answer": "3",
+      "type": "mcq",
+      "options": [
+        {
+          "opt": "TOP"
+        },
+        {
+          "opt": "MOST"
+        },
+        {
+          "opt": "UPPER"
+        },
+        {
+          "opt": "MAX"
+        }
+      ],
+      "hour": 0,
+      "minute": 10
+    },
+    "7": {
+      "question": "What is a view?",
+      "answer": "1",
+      "type": "mcq",
+      "options": [
+        {
+          "opt": "A view is a special stored procedure executed when certain event occurs"
+        },
+        {
+          "opt": "A view is a virtual table which results of executing a pre-compiled query. A view is not part of the physical database schema, while the regular tables are"
+        },
+        {
+          "opt": "A view is a database diagram"
+        },
+        {
+          "opt": "None of these"
+        }
+      ],
+      "hour": 0,
+      "minute": 10
+    },
+    "8": {
+      "question": "Which of the following SQL commands is used to retrieve data?",
+      "answer": "2",
+      "type": "mcq",
+      "options": [
+        {
+          "opt": "DELETE"
+        },
+        {
+          "opt": "INSERT"
+        },
+        {
+          "opt": "SELECT"
+        },
+        {
+          "opt": "JOIN"
+        }
+      ],
+      "hour": 0,
+      "minute": 10
+    },
+    "9": {
+      "question": "Which of the following is a SQL aggregate function?",
+      "answer": "1",
+      "type": "mcq",
+      "options": [
+        {
+          "opt": "LEFT"
+        },
+        {
+          "opt": "AVG"
+        },
+        {
+          "opt": "JOIN"
+        },
+        {
+          "opt": "LEN"
+        }
+      ],
+      "hour": 0,
+      "minute": 10
+    },
+    "10": {
+      "question": "Which SQL statement is used to update data in a database?",
+      "answer": "1",
+      "type": "mcq",
+      "options": [
+        {
+          "opt": "SAVE"
+        },
+        {
+          "opt": "UPDATE"
+        },
+        {
+          "opt": "SAVE AS"
+        },
+        {
+          "opt": "MODIFY"
+        }
+      ],
+      "hour": 0,
+      "minute": 10
+    },
+    "11": {
+      "question": "To delete a database ___________ command is used",
+      "answer": "2",
+      "type": "mcq",
+      "options": [
+        {
+          "opt": "Delete database database_name"
+        },
+        {
+          "opt": "Delete database_name"
+        },
+        {
+          "opt": "drop database database_name"
+        },
+        {
+          "opt": "drop database_name"
+        }
+      ],
+      "hour": 0,
+      "minute": 10
+    },
+    "12": {
+      "question": "Which of the following statements contains an error?",
+      "answer": "3",
+      "type": "mcq",
+      "options": [
+        {
+          "opt": "Select * from emp where empid = 10003;"
+        },
+        {
+          "opt": "Select empid from emp where empid = 10006;"
+        },
+        {
+          "opt": "Select empid from emp;"
+        },
+        {
+          "opt": "Select empid where empid = 1009 and lastname = &#39;GELLER&#39;;"
+        }
+      ],
+      "hour": 0,
+      "minute": 10
+    },
+    "13": {
+      "question": "Select name, course_id from instructor, teaches where instructor_ID= teaches_ID; This Query can be replaced by which one of the following ?",
+      "answer": "1",
+      "type": "mcq",
+      "options": [
+        {
+          "opt": "Select name,course_id from teaches,instructor where instructor_id=course_id;"
+        },
+        {
+          "opt": "Select name, course_id from instructor natural join teaches;"
+        },
+        {
+          "opt": "Select name ,course_id from instructor;"
+        },
+        {
+          "opt": "Select course_id from instructor join teaches;"
+        }
+      ],
+      "hour": 0,
+      "minute": 10
+    },
+    "14": {
+      "question": "Select ID, name, dept name, salary * 1.1 where instructor; The query given below will not give an error. Which one of the following has to be replaced to get the desired output?",
+      "answer": "2",
+      "type": "mcq",
+      "options": [
+        {
+          "opt": "Salary*1.1"
+        },
+        {
+          "opt": "ID"
+        },
+        {
+          "opt": "Where"
+        },
+        {
+          "opt": "Instructor"
+        }
+      ],
+      "hour": 0,
+      "minute": 10
+    },
+    "15": {
+      "question": "Which of the following statement on the view concept in SQL is invalid?",
+      "answer": "3",
+      "type": "mcq",
+      "options": [
+        {
+          "opt": "All views are not updateable"
+        },
+        {
+          "opt": "The views may be referenced in an SQL statement whenever tables are referenced"
+        },
+        {
+          "opt": "The views are instantiated at the time they are referenced and not when they are defined"
+        },
+        {
+          "opt": "The definition of a view should not have GROUP BY clause in it"
+        }
+      ],
+      "hour": 0,
+      "minute": 10
+    },
+    "16": {
+      "question": "To drop a column that is used as a foreign key, first:",
+      "answer": "2",
+      "type": "mcq",
+      "options": [
+        {
+          "opt": "drop the primary key"
+        },
+        {
+          "opt": "drop the table containing the foreign key"
+        },
+        {
+          "opt": "drop the foreign key constraint"
+        },
+        {
+          "opt": "All of the above must be done"
+        }
+      ],
+      "hour": 0,
+      "minute": 10
+    },
+    "17": {
+      "question": "The process by which the structure of the database is modified to eliminate hidden dependencies and replacing groups is _________",
+      "answer": "0",
+      "type": "mcq",
+      "options": [
+        {
+          "opt": "Normalization"
+        },
+        {
+          "opt": "Indexing"
+        },
+        {
+          "opt": "Enforcing referential integrity"
+        },
+        {
+          "opt": "Enforcing data integrity"
+        }
+      ],
+      "hour": 0,
+      "minute": 10
+    },
+    "18": {
+      "question": "The raw facts and figures are",
+      "answer": "0",
+      "type": "mcq",
+      "options": [
+        {
+          "opt": "Data"
+        },
+        {
+          "opt": "Data field"
+        },
+        {
+          "opt": "DBMS"
+        },
+        {
+          "opt": "DBASE"
+        }
+      ],
+      "hour": 0,
+      "minute": 10
+    },
+    "19": {
+      "question": "What SQL command can be used to delete columns from a table?",
+      "answer": "2",
+      "type": "mcq",
+      "options": [
+        {
+          "opt": "MODIFY TABLE TableName DROP COLUMN ColumnName"
+        },
+        {
+          "opt": "MODIFY TABLE TableName DROP ColumnName"
+        },
+        {
+          "opt": "ALTER TABLE TableName DROP COLUMN ColumnName"
+        },
+        {
+          "opt": "ALTER TABLE TableName DROP ColumnName"
+        }
+      ],
+      "hour": 0,
+      "minute": 10
+    },
+    "20": {
+      "question": "Before any changes to database structure are attempted one should first:",
+      "answer": "3",
+      "type": "mcq",
+      "options": [
+        {
+          "opt": "Clearly understand the current structure and contents of the database only"
+        },
+        {
+          "opt": "Test any changes on a test database only"
+        },
+        {
+          "opt": "Create a complete backup of the operational database only"
+        },
+        {
+          "opt": "All of the above should be done"
+        }
+      ],
+      "hour": 0,
+      "minute": 10
+    },
+    "21": {
+      "question": "Examine the structure of the EMPLOYEES table:  &lt;br&gt;&lt;br&gt;EMPLOYEE_ID  NUMBER      Primary Key&lt;br&gt;FIRST_NAME VARCHAR2(25) &lt;br&gt;LAST_NAME VARCHAR2(25)&lt;br&gt;&lt;br&gt;Which statement will not insert a row into the table?  ",
+      "answer": "0",
+      "type": "mcq",
+      "options": [
+        {
+          "opt": "INSERT INTO employees VALUES ( NULL, 'John','Smith'); "
+        },
+        {
+          "opt": "INSERT INTO employees VALUES ('1000','John',NULL); "
+        },
+        {
+          "opt": "INSERT INTO employees (employee_id) VALUES (1000); "
+        },
+        {
+          "opt": "INSERT INTO employees (employee_id, first_name, last_name) VALUES ( 1000, 'John',''); "
+        }
+      ],
+      "hour": 0,
+      "minute": 10
+    },
+    "22": {
+      "question": "Evaluate the SQL statement:  &lt;br&gt;1 SELECT a.emp_name, a.sal, a.dept_id, b.maxsal &lt;br&gt;2 FROM employees a, &lt;br&gt;3 (SELECT dept_id, MAX(sal) maxsal &lt;br&gt;4. FROM employees &lt;br&gt;5 GROUP BY dept_id) b &lt;br&gt;6 WHERE a.dept_id = b.dept_id &lt;br&gt;7 AND a.sal &lt; b.maxsal;  &lt;br&gt;&lt;br&gt;What is the result of the statement? ",
+      "answer": "4",
+      "type": "mcq",
+      "options": [
+        {
+          "opt": "The statement produces an error at line 1. "
+        },
+        {
+          "opt": "The statement produces an error at line 3. "
+        },
+        {
+          "opt": "The statement produces an error at line 6. "
+        },
+        {
+          "opt": "The statement returns the employee name, salary, department ID, and maximum salary earned in the department of the employee for all departments that pay less salary then the maximum salary paid in the company. "
+        },
+        {
+          "opt": " The statement returns the employee name, salary, department ID, and maximum salary earned in the department of the employee for all employees who earn less than the maximum salary in their department."
+        }
+      ],
+      "hour": 0,
+      "minute": 10
+    },
+    "23": {
+      "question": "When each item of data in a database is directly linked with every other item of data, the database is called",
+      "answer": "0",
+      "type": "mcq",
+      "options": [
+        {
+          "opt": "Relational"
+        },
+        {
+          "opt": "Hierarchical"
+        },
+        {
+          "opt": "Network"
+        },
+        {
+          "opt": "Flat"
+        }
+      ],
+      "hour": 0,
+      "minute": 10
+    },
+    "24": {
+      "question": " _____________ is the most efficient method to reduce the duplication of data.",
+      "answer": "1",
+      "type": "mcq",
+      "options": [
+        {
+          "opt": "Duplication"
+        },
+        {
+          "opt": "Normalisation"
+        },
+        {
+          "opt": "Data Reduction"
+        },
+        {
+          "opt": "Data Modeling"
+        }
+      ],
+      "hour": 0,
+      "minute": 10
+    }
+  }
