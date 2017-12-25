@@ -68,7 +68,7 @@ public class QuestionActivity extends Activity {
 			RadioGroup questionLayout = (RadioGroup)findViewById(R.id.answers);
 			Button finish = (Button)findViewById(R.id.finish);
 			finish.setOnClickListener(finishListener);
-			
+			answers.clearCheck();
 			prev = (Button)findViewById(R.id.Prev);
 			prev.setOnClickListener(prevListener);
 			next = (Button)findViewById(R.id.Next);
@@ -92,50 +92,56 @@ public class QuestionActivity extends Activity {
 	}
 
     private void End() {
-        setAnswer();
-        //Calculate Score
-        int score = 0;
-        for(int i=0; i<correctAns.length; i++){
-            if ((correctAns[i] != -1) && (correctAns[i] == selected[i]))
-                score++;
-        }
-        AlertDialog alertDialog;
-        alertDialog = new Builder(QuestionActivity.this).create();
-        alertDialog.setTitle("Score");
-        alertDialog.setMessage((score) +" out of " + (QuizFunActivity.getQuesList().length()));
-        alertDialog.setCancelable(false);
-        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "Retake", new DialogInterface.OnClickListener(){
+		setAnswer();
+		//Calculate Score
+		int score = 0;
+		for (int i = 0; i < correctAns.length; i++) {
+			if ((correctAns[i] != -1) && (correctAns[i] == selected[i]))
+				score++;
+		}
+		int cpuscore=(int)(Math.random() * ((21 - 15) + 1)) + 15;
+		AlertDialog alertDialog;
+		alertDialog = new Builder(QuestionActivity.this).create();
+		alertDialog.setTitle("Score");
+		alertDialog.setMessage("Your score "+ (score) + " out of " + (QuizFunActivity.getQuesList().length())+"\n\n"+"CPU Score " +(cpuscore) + " out of " + (QuizFunActivity.getQuesList().length()));
+		alertDialog.setCancelable(false);
+		alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "Retake", new DialogInterface.OnClickListener() {
 
-            public void onClick(DialogInterface dialog, int which) {
-                review = false;
-                quesIndex=0;
-                QuestionActivity.this.showQuestion(0, review);
-            }
-        });
+			public void onClick(DialogInterface dialog, int which) {
+				QuestionActivity.this. stopCountdown();
+				QuestionActivity.this.startTimer();
+				review = false;
+				quesIndex = 0;
+				QuestionActivity.this.showQuestion(0, review);
+				answers.check(-1);
+				answers.clearCheck();
+			}
+		});
 
-        alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Review", new DialogInterface.OnClickListener(){
+		alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Review", new DialogInterface.OnClickListener() {
 
-            public void onClick(DialogInterface dialog, int which) {
-                review = true;
-                quesIndex=0;
-                QuestionActivity.this.showQuestion(0, review);
-            }
-        });
+			public void onClick(DialogInterface dialog, int which) {
+				review = true;
+				quesIndex = 0;
+				QuestionActivity.this.showQuestion(0, review);
+			}
+		});
 
-        alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE,"Quit", new DialogInterface.OnClickListener(){
+		alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "Quit", new DialogInterface.OnClickListener() {
 
-            public void onClick(DialogInterface dialog, int which) {
-                review = false;
-                finish();
-            }
-        });
+			public void onClick(DialogInterface dialog, int which) {
+				review = false;
+				finish();
+			}
+		});
 
-        alertDialog.show();
+		alertDialog.show();
     }
 
 
     private void showQuestion(int qIndex,boolean review) {
 		try {
+			answers.clearCheck();
 			JSONObject aQues = QuizFunActivity.getQuesList().getJSONObject(qIndex);
 			String quesValue = aQues.getString("question");
 			if (correctAns[qIndex] == -1) {
@@ -212,10 +218,10 @@ public class QuestionActivity extends Activity {
 	private OnClickListener finishListener;
 
     {
-        finishListener = new OnClickListener() {
+    	finishListener = new OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.CUPCAKE)
-            public void onClick(View v) {
-                QuestionActivity.this.stopCountdown();
+            public void onClick(View v) { End();
+                /*QuestionActivity.this.stopCountdown();
                 setAnswer();
                 //Calculate Score
                 int score = 0;
@@ -223,11 +229,12 @@ public class QuestionActivity extends Activity {
                     if ((correctAns[i] != -1) && (correctAns[i] == selected[i]))
                         score++;
                 }
-                AlertDialog alertDialog;
+				int cpuscore=(int)(Math.random() * ((21 - 15) + 1)) + 15;
+				AlertDialog alertDialog;
                 alertDialog = new Builder(QuestionActivity.this).create();
                 alertDialog.setTitle("Score");
-                alertDialog.setMessage((score) + " out of " + (QuizFunActivity.getQuesList().length()));
-
+                alertDialog.setMessage("Your score "+ (score) + " out of " + (QuizFunActivity.getQuesList().length())+"\n\n"+"CPU Score " +(cpuscore) + " out of " + (QuizFunActivity.getQuesList().length()));
+				alertDialog.setCancelable(false);
                 alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "Retake", new DialogInterface.OnClickListener() {
 
                     public void onClick(DialogInterface dialog, int which) {
@@ -236,7 +243,8 @@ public class QuestionActivity extends Activity {
                         review = false;
                         quesIndex = 0;
                         QuestionActivity.this.showQuestion(0, review);
-
+						answers.check(-1);
+						answers.clearCheck();
                     }
                 });
 
@@ -257,13 +265,18 @@ public class QuestionActivity extends Activity {
                     }
                 });
 
-                alertDialog.show();
+                alertDialog.show();*/
 
             }
         };
     }
-
-    private void setAnswer() {
+	@Override
+	protected void onResume() {
+		RadioGroup questionLayout=(RadioGroup)findViewById(R.id.answers);
+		answers.check(-1);
+		super.onResume();
+	}
+	private void setAnswer() {
 		if (answer1.isChecked())
 			selected[quesIndex] = 0;
 		if (answer2.isChecked())
@@ -302,12 +315,13 @@ public class QuestionActivity extends Activity {
 	
 	private void setScoreTitle() {
 		this.setTitle("Self Evaluation" + "     " + (quesIndex+1)+ "/" + QuizFunActivity.getQuesList().length());
+
 	}
+
     public void startTimer(){
         CountDownTimer countDownTimer = new CountDownTimer(10000, 1000) {
             public void onTick(long millisUntilFinished) {
                 long millis = millisUntilFinished;
-                //Convert milliseconds into hour,minute and seconds
                 String hms = String.format("%02d:%02d", TimeUnit.MILLISECONDS.toMinutes(millis) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(millis)), TimeUnit.MILLISECONDS.toSeconds(millis) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(millis)));
                 mTextField.setText(hms);//set text
             }
@@ -315,6 +329,8 @@ public class QuestionActivity extends Activity {
             public void onFinish() {
                 mTextField.setText("TIME'S UP!!");
                 End();
+
+
             }
         }.start();
     }

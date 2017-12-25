@@ -7,17 +7,18 @@
     android:weightSum="1">
 
     <TextView
+        android:id="@+id/mTextField"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/mTextField"
-        android:gravity="center"
         android:layout_gravity="center_horizontal"
-        android:textSize="30sp"
-        android:text="00:00"
         android:layout_marginTop="25dp"
-        android:textStyle="bold"
-        android:textColor="#4CAF50"/>
+        android:gravity="center"
+        android:text="00:00"
+        android:textColor="#4CAF50"
+        android:textSize="30sp"
+        android:textStyle="bold" />
 <ScrollView>
+
     <EditText
         android:id="@+id/question"
         android:layout_height="wrap_content"
@@ -66,6 +67,7 @@
         android:layout_height="wrap_content"
         android:text="@string/radiobutton4" />
     </RadioGroup>
+
 </ScrollView>
 
     <LinearLayout
