@@ -14,22 +14,15 @@
     <application
         android:icon="@drawable/guvi"
         android:label="@string/app_name">
-        <activity
-            android:name=".QuizFunActivity"
-            android:label="@string/app_name">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".QuestionActivity"
-            android:label="@string/app_name">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.codewiz_inc.selfe.QuizFunActivity" />
-        </activity>
+        <activity android:name=".QuizFunActivity"></activity>
+        <activity android:name=".QuestionActivity"></activity>
     </application>
 
 </manifest>
